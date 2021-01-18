@@ -4,11 +4,28 @@ import java.io.File;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Main
+ * Sistema principal de formularios, para gestionar las respuestas y preguntas.
+ * @author Victor Caicedo y Juan Avila
+ * @version 1.0
+ */
 public class Main {
 
+    /**
+     * Scanner para las opciones del menu
+     */
     static Scanner scOpciones = new Scanner(System.in);
+    /**
+     * Scanner para las entradas dentro de las funciones
+     */
     static Scanner scTexto = new Scanner(System.in);
 
+    /**
+     * Inicio de la aplicacion
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         SistemaFormularioImpl sistemaFormularios = new SistemaFormularioImpl();
 
@@ -26,7 +43,7 @@ public class Main {
 
                 switch (opcion) {
                     case 1 -> {
-
+                        // REQUERIMIENTO 1
                         for (int i = 0; i < sistemaFormularios.getListaFormularios().size(); i++) {
                             System.out.println(
                                     ((i + 1) + ". " + sistemaFormularios.getListaFormularios().get(i).getNombre()));
@@ -56,7 +73,7 @@ public class Main {
                                 switch (opcion1) {
 
                                     case 1:
-
+                                        // REQUERIMIENTO 1.1
                                         System.out.println("Ingrese que tipo de pregunta desea insertar");
                                         System.out.println("Corta (c) - Unica (u) - Verdadero/Falso (v)");
                                         String tipoPregunta = scTexto.nextLine();
@@ -99,6 +116,7 @@ public class Main {
                                         break;
 
                                     case 2:
+                                        // REQUERIMIENTO 1.2
                                         if (formularioCookie.getListaPreguntas().size() >= 1) {
                                             System.out.println("... Desplegando lista de preguntas ... ");
                                             for (int i = 0; i < formularioCookie.getListaPreguntas().size(); i++) {
@@ -122,6 +140,7 @@ public class Main {
                                         break;
 
                                     case 3:
+                                        // REQUERIMIENTO 1.3
                                         int opcion2 = 0;
                                         do {
                                             System.out.println("1. Modificar enunciado");
@@ -138,6 +157,7 @@ public class Main {
 
                                                 switch (opcion2) {
                                                     case 1 -> {
+                                                        // REQUERIMIENTO 1.3.1
                                                         for (int i = 0; i < formularioCookie.getListaPreguntas()
                                                                 .size(); i++) {
                                                             System.out.println((i + 1) + ". "
@@ -162,6 +182,7 @@ public class Main {
                                                         }
                                                     }
                                                     case 2 -> {
+                                                        // REQUERIMIENTO 1.3.2
                                                         for (int i = 0; i < formularioCookie.getListaPreguntas()
                                                                 .size(); i++) {
                                                             System.out.println((i + 1) + ". "
@@ -191,6 +212,7 @@ public class Main {
                                                         }
                                                     }
                                                     case 3 -> {
+                                                        // REQUERIMIENTO 1.3.3
                                                         for (int i = 0; i < formularioCookie.getListaPreguntas()
                                                                 .size(); i++) {
                                                             System.out.println((i + 1) + ". "
@@ -222,6 +244,7 @@ public class Main {
                                                         }
                                                     }
                                                     case 4 -> {
+                                                        // REQUERIMIENTO 1.3.4
                                                         for (int i = 0; i < formularioCookie.getListaPreguntas()
                                                                 .size(); i++) {
                                                             System.out.println((i + 1) + ". "
@@ -251,6 +274,7 @@ public class Main {
                                                         }
                                                     }
                                                     case 5 -> {
+                                                        // REQUERIMIENTO 1.3.5
                                                         for (int i = 0; i < formularioCookie.getListaPreguntas()
                                                                 .size(); i++) {
                                                             System.out.println((i + 1) + ". "
@@ -274,7 +298,8 @@ public class Main {
                                                             System.out.println("\nValor no valido");
                                                         }
                                                     }
-                                                    case 6 -> System.out.println("\n...Saliendo del menu...");
+                                                    case 6 -> // REQUERIMIENTO 1.3.6
+                                                            System.out.println("\n...Saliendo del menu...");
                                                     default -> System.out.println("Ingrese solo del 1 al 6");
                                                 }
 
@@ -286,6 +311,7 @@ public class Main {
                                         break;
 
                                     case 4:
+                                        // REQUERIMIENTO 1.4
                                         System.out.println("Saliendo y guardando...");
                                         if (sistemaFormularios.guardarYSalir(formularioCookie)) {
                                             System.out.println("Salida exitosa");
@@ -295,6 +321,7 @@ public class Main {
                                         break;
 
                                     case 5:
+                                        // REQUERIMIENTO 1.5
                                         System.out.println("\n... Saliendo al menu principal ... ");
                                         break;
 
@@ -308,7 +335,8 @@ public class Main {
 
                         } while (opcion1 != 5 && opcion1 != 4);
                     }
-                    case 2 -> System.out.println("Ha elegido salir");
+                    case 2 -> // REQUERIMIENTO 2
+                            System.out.println("Ha elegido salir");
                     default -> System.out.println("Ingrese solo 1 o 2");
                 }
             } catch (InputMismatchException e) {
@@ -319,6 +347,11 @@ public class Main {
 
     }
 
+    /**
+     * Lectura de los archivos dentro del directorio para asi genrear ls formularios dentro del programa y poder administrarlos
+     *
+     * @param sistema sistema sobre el cual se gestionaran los formularios
+     */
     public static void leerArchivo(SistemaFormularioImpl sistema) {
         String ruta = new File("").getAbsolutePath();
         ruta = ruta + "\\";
@@ -402,5 +435,4 @@ public class Main {
         System.out.println();
     }
 
-    //
 }
