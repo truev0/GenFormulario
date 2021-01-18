@@ -1,0 +1,15 @@
+c
+Nombre
+
+c
+Rut
+
+u,3,2
+¿En que anio se conformo la primera junta de gobierno de Chile?
+1910
+1810
+2000
+v,f
+Un gigabyte equivale a 1000 megabytes?
+v,v
+Este taller es muy divertido

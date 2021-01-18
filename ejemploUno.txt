@@ -1,0 +1,12 @@
+c
+Este es un enunciado de ejemplo de una respuesta corta
+esta es la respuesta de una pregunta de respuesta corta
+u,3,3
+Este es el enunciado de una pregunta de eleccion unica, tiene 3 distractores y el 3ro es el correcto
+Distractor uno
+doooos
+correctus
+v,v
+Una pregunta de verdadero o falso, la respuesta de esta es Verdadero
+v,f
+otra pregunta de verdadero o fals, pero ahora la correcta es Falso
