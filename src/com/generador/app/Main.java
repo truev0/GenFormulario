@@ -28,7 +28,8 @@ public class Main {
                     case 1 -> {
 
                         for (int i = 0; i < sistemaFormularios.getListaFormularios().size(); i++) {
-                            System.out.println(((i + 1) + ". " + sistemaFormularios.getListaFormularios().get(i).getNombre()));
+                            System.out.println(
+                                    ((i + 1) + ". " + sistemaFormularios.getListaFormularios().get(i).getNombre()));
                         }
                         System.out.println("Ingrese el nombre del formulario a abrir: ");
                         String nombre = scTexto.nextLine();
@@ -68,7 +69,8 @@ public class Main {
                                             String respuesta = scTexto.nextLine();
                                             RespuestaCorta nuevaPregunta = new RespuestaCorta(tipoPregunta.charAt(0),
                                                     enunciado, respuesta);
-                                            if (sistemaFormularios.insertarPreguntaCorta(formularioCookie, nuevaPregunta))
+                                            if (sistemaFormularios.insertarPreguntaCorta(formularioCookie,
+                                                    nuevaPregunta))
                                                 System.out.println("Pregunta añadida correctamente");
 
                                         } else if (tipoPregunta.charAt(0) == 'u') {
@@ -77,9 +79,10 @@ public class Main {
                                             String enunciado = scTexto.nextLine();
                                             RespuestaUnica nuevaPregunta = new RespuestaUnica(tipoPregunta.charAt(0),
                                                     enunciado);
-                                            if (sistemaFormularios.insertarPreguntaUnica(formularioCookie, nuevaPregunta))
-                                                System.out.println("Pregunta añadida correctamente, debe agregar las " +
-                                                        "opciones desde el menu de agregar opciones.");
+                                            if (sistemaFormularios.insertarPreguntaUnica(formularioCookie,
+                                                    nuevaPregunta))
+                                                System.out.println("Pregunta añadida correctamente, debe agregar las "
+                                                        + "opciones desde el menu de agregar opciones.");
 
                                         } else if (tipoPregunta.charAt(0) == 'v') {
 
@@ -87,8 +90,8 @@ public class Main {
                                             String enunciado = scTexto.nextLine();
                                             System.out.println("Ingrese la respuesta, solo se acepta ( v / f ): ");
                                             String respuesta = scTexto.nextLine();
-                                            RespuestaVF nuevaPregunta = new RespuestaVF(tipoPregunta.charAt(0), enunciado
-                                                    , respuesta.charAt(0));
+                                            RespuestaVF nuevaPregunta = new RespuestaVF(tipoPregunta.charAt(0),
+                                                    enunciado, respuesta.charAt(0));
                                             if (sistemaFormularios.insertarPreguntaVF(formularioCookie, nuevaPregunta))
                                                 System.out.println("Pregunta añadida correctamente");
 
@@ -99,17 +102,19 @@ public class Main {
                                         if (formularioCookie.getListaPreguntas().size() >= 1) {
                                             System.out.println("... Desplegando lista de preguntas ... ");
                                             for (int i = 0; i < formularioCookie.getListaPreguntas().size(); i++) {
-                                                System.out.println((i + 1) + ". " + formularioCookie.getListaPreguntas().get(i));
+                                                System.out.println(
+                                                        (i + 1) + ". " + formularioCookie.getListaPreguntas().get(i));
                                             }
 
-                                            System.out.println("\n Ingrese la posicion de la pregunta a eliminar (0 para salir): ");
+                                            System.out.println(
+                                                    "\n Ingrese la posicion de la pregunta a eliminar (0 para salir): ");
                                             int pos = scTexto.nextInt();
                                             scTexto.nextLine();
                                             if (sistemaFormularios.eliminarPregunta(formularioCookie, pos)) {
                                                 System.out.println("Pregunta eliminada correctamente");
                                             } else {
-                                                System.out.println("La pregunta no se elimino, quizas no exite la " +
-                                                        "opcion en la lista.");
+                                                System.out.println("La pregunta no se elimino, quizas no exite la "
+                                                        + "opcion en la lista.");
                                             }
                                         } else {
                                             System.out.println("No es posible eliminar preguntas en este formulario");
@@ -133,17 +138,21 @@ public class Main {
 
                                                 switch (opcion2) {
                                                     case 1 -> {
-                                                        for (int i = 0; i < formularioCookie.getListaPreguntas().size(); i++) {
-                                                            System.out.println((i + 1) + ". " + formularioCookie.getListaPreguntas().get(i));
+                                                        for (int i = 0; i < formularioCookie.getListaPreguntas()
+                                                                .size(); i++) {
+                                                            System.out.println((i + 1) + ". "
+                                                                    + formularioCookie.getListaPreguntas().get(i));
                                                         }
-                                                        System.out.println("Ingrese la posicion de la pregunta a " +
-                                                                "modificar el enunciado: ");
+                                                        System.out.println("Ingrese la posicion de la pregunta a "
+                                                                + "modificar el enunciado: ");
                                                         pos = scTexto.nextInt();
                                                         scTexto.nextLine();
-                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()+1) {
+                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()
+                                                                + 1) {
                                                             System.out.println("Ingrese el nuevo enunciado: ");
                                                             String enunciadoNuevo = scTexto.nextLine();
-                                                            if (sistemaFormularios.modificarEnunciado(formularioCookie, pos, enunciadoNuevo)) {
+                                                            if (sistemaFormularios.modificarEnunciado(formularioCookie,
+                                                                    pos, enunciadoNuevo)) {
                                                                 System.out.println("Enunciado cambiado correctamente");
                                                             } else {
                                                                 System.out.println("El enunciado no se pudo modificar");
@@ -153,21 +162,26 @@ public class Main {
                                                         }
                                                     }
                                                     case 2 -> {
-                                                        for (int i = 0; i < formularioCookie.getListaPreguntas().size(); i++) {
-                                                            System.out.println((i + 1) + ". " + formularioCookie.getListaPreguntas().get(i));
+                                                        for (int i = 0; i < formularioCookie.getListaPreguntas()
+                                                                .size(); i++) {
+                                                            System.out.println((i + 1) + ". "
+                                                                    + formularioCookie.getListaPreguntas().get(i));
                                                         }
-                                                        System.out.println("\nIngrese la posicion de la pregunta a " +
-                                                                "añadirle opcion, (recuerde que si no es del tipo " +
-                                                                "(Respuesta unica) no podra agregar la opcion): ");
+                                                        System.out.println("\nIngrese la posicion de la pregunta a "
+                                                                + "añadirle opcion, (recuerde que si no es del tipo "
+                                                                + "(Respuesta unica) no podra agregar la opcion): ");
                                                         pos = scTexto.nextInt();
                                                         scTexto.nextLine();
-                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()+1) {
-                                                            System.out.println(sistemaFormularios.getListaFormularios().get(indexF).getListaPreguntas().get(pos - 1));
+                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()
+                                                                + 1) {
+                                                            System.out.println(sistemaFormularios.getListaFormularios()
+                                                                    .get(indexF).getListaPreguntas().get(pos - 1));
 
-                                                            System.out.println("\nIngrese el texto que debe incluir la " +
-                                                                    "opcion: ");
+                                                            System.out.println("\nIngrese el texto que debe incluir la "
+                                                                    + "opcion: ");
                                                             String opTexto = scTexto.nextLine();
-                                                            if (sistemaFormularios.agregarOpcion(formularioCookie, pos, opTexto)) {
+                                                            if (sistemaFormularios.agregarOpcion(formularioCookie, pos,
+                                                                    opTexto)) {
                                                                 System.out.println("Opcion agregada correctamente.");
                                                             } else {
                                                                 System.out.println("La opcion no se ha podido agregar");
@@ -177,22 +191,28 @@ public class Main {
                                                         }
                                                     }
                                                     case 3 -> {
-                                                        for (int i = 0; i < formularioCookie.getListaPreguntas().size(); i++) {
-                                                            System.out.println((i + 1) + ". " + formularioCookie.getListaPreguntas().get(i));
+                                                        for (int i = 0; i < formularioCookie.getListaPreguntas()
+                                                                .size(); i++) {
+                                                            System.out.println((i + 1) + ". "
+                                                                    + formularioCookie.getListaPreguntas().get(i));
                                                         }
-                                                        System.out.println("\nIngrese la posicion de la pregunta a " +
-                                                                "modificarle opcion, (recuerde que si no es del tipo " +
-                                                                "(Respuesta unica) no podra agregar la opcion): ");
+                                                        System.out.println("\nIngrese la posicion de la pregunta a "
+                                                                + "modificarle opcion, (recuerde que si no es del tipo "
+                                                                + "(Respuesta unica) no podra agregar la opcion): ");
                                                         pos = scTexto.nextInt();
                                                         scTexto.nextLine();
-                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()+1) {
-                                                            System.out.println(sistemaFormularios.getListaFormularios().get(indexF).getListaPreguntas().get(pos - 1));
-                                                            System.out.println("\nIngrese el texto de la opcion vieja" +
-                                                                    "(si no se encuentra no se podra cambiar): ");
+                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()
+                                                                + 1) {
+                                                            System.out.println(sistemaFormularios.getListaFormularios()
+                                                                    .get(indexF).getListaPreguntas().get(pos - 1));
+                                                            System.out.println("\nIngrese el texto de la opcion vieja"
+                                                                    + "(si no se encuentra no se podra cambiar): ");
                                                             String opcionVieja = scTexto.nextLine();
-                                                            System.out.println("\nIngrese el texto de la opcion nueva: ");
+                                                            System.out
+                                                                    .println("\nIngrese el texto de la opcion nueva: ");
                                                             String opcionNueva = scTexto.nextLine();
-                                                            if (sistemaFormularios.modificarOpcion(formularioCookie, pos, opcionVieja, opcionNueva)) {
+                                                            if (sistemaFormularios.modificarOpcion(formularioCookie,
+                                                                    pos, opcionVieja, opcionNueva)) {
                                                                 System.out.println("Opcion modificada correctamente");
                                                             } else {
                                                                 System.out.println("La opcion no se pudo modificar");
@@ -202,20 +222,26 @@ public class Main {
                                                         }
                                                     }
                                                     case 4 -> {
-                                                        for (int i = 0; i < formularioCookie.getListaPreguntas().size(); i++) {
-                                                            System.out.println((i + 1) + ". " + formularioCookie.getListaPreguntas().get(i));
+                                                        for (int i = 0; i < formularioCookie.getListaPreguntas()
+                                                                .size(); i++) {
+                                                            System.out.println((i + 1) + ". "
+                                                                    + formularioCookie.getListaPreguntas().get(i));
                                                         }
-                                                        System.out.println("\nIngrese la posicion de la pregunta a " +
-                                                                "eliminar opcion, (recuerde que si no es del tipo " +
-                                                                "(Respuesta unica) no podra agregar la opcion): ");
+                                                        System.out.println("\nIngrese la posicion de la pregunta a "
+                                                                + "eliminar opcion, (recuerde que si no es del tipo "
+                                                                + "(Respuesta unica) no podra agregar la opcion): ");
                                                         pos = scTexto.nextInt();
                                                         scTexto.nextLine();
-                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()+1) {
-                                                            System.out.println(sistemaFormularios.getListaFormularios().get(indexF).getListaPreguntas().get(pos - 1));
-                                                            System.out.println("\nIngrese el texto de la opcion a eliminar (" +
-                                                                    "si este no existe no se puede eliminar): ");
+                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()
+                                                                + 1) {
+                                                            System.out.println(sistemaFormularios.getListaFormularios()
+                                                                    .get(indexF).getListaPreguntas().get(pos - 1));
+                                                            System.out.println(
+                                                                    "\nIngrese el texto de la opcion a eliminar ("
+                                                                            + "si este no existe no se puede eliminar): ");
                                                             String texto = scTexto.nextLine();
-                                                            if (sistemaFormularios.eliminarOpcion(formularioCookie, pos, texto)) {
+                                                            if (sistemaFormularios.eliminarOpcion(formularioCookie, pos,
+                                                                    texto)) {
                                                                 System.out.println("Opcion eliminada correctamente");
                                                             } else {
                                                                 System.out.println("La opcion no se pudo eliminar");
@@ -225,15 +251,21 @@ public class Main {
                                                         }
                                                     }
                                                     case 5 -> {
-                                                        for (int i = 0; i < formularioCookie.getListaPreguntas().size(); i++) {
-                                                            System.out.println((i + 1) + ". " + formularioCookie.getListaPreguntas().get(i));
+                                                        for (int i = 0; i < formularioCookie.getListaPreguntas()
+                                                                .size(); i++) {
+                                                            System.out.println((i + 1) + ". "
+                                                                    + formularioCookie.getListaPreguntas().get(i));
                                                         }
-                                                        System.out.println("\nIngrese la posicion de la pregunta a asignar respuesta: ");
+                                                        System.out.println(
+                                                                "\nIngrese la posicion de la pregunta a asignar respuesta: ");
                                                         pos = scTexto.nextInt();
                                                         scTexto.nextLine();
-                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()+1) {
-                                                            System.out.println(sistemaFormularios.getListaFormularios().get(indexF).getListaPreguntas().get(pos - 1));
-                                                            if (sistemaFormularios.asignarRespuesta(formularioCookie, pos)) {
+                                                        if (pos > 0 && pos < formularioCookie.getListaPreguntas().size()
+                                                                + 1) {
+                                                            System.out.println(sistemaFormularios.getListaFormularios()
+                                                                    .get(indexF).getListaPreguntas().get(pos - 1));
+                                                            if (sistemaFormularios.asignarRespuesta(formularioCookie,
+                                                                    pos)) {
                                                                 System.out.println("Ejecutado correctamente");
                                                             } else {
                                                                 System.out.println("No se pudo ejecutar la accion");
@@ -357,7 +389,8 @@ public class Main {
                             }
                         }
                         if (formulario != null) {
-                            System.out.println("... Guardadas " + formulario.getListaPreguntas().size() + " preguntas en el formulario " + formulario.getNombre());
+                            System.out.println("... Guardadas " + formulario.getListaPreguntas().size()
+                                    + " preguntas en el formulario " + formulario.getNombre());
                         } else {
                             System.out.println("No se han guardado preguntas.");
                         }

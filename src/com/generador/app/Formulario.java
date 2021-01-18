@@ -30,9 +30,6 @@ public class Formulario {
 
     @Override
     public String toString() {
-        return "Formulario{" +
-                "nombre='" + nombre + '\'' +
-                ", listaPreguntas=" + listaPreguntas +
-                '}';
+        return "Formulario{" + "nombre='" + nombre + '\'' + ", listaPreguntas=" + listaPreguntas + '}';
     }
 }

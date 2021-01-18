@@ -25,9 +25,6 @@ public abstract class Pregunta {
 
     @Override
     public String toString() {
-        return "Pregunta{" +
-                "id=" + id +
-                ", enunciado='" + enunciado + '\'' +
-                '}';
+        return "Pregunta{" + "id=" + id + ", enunciado='" + enunciado + '\'' + '}';
     }
 }

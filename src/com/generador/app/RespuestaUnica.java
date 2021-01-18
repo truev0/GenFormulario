@@ -62,7 +62,8 @@ public class RespuestaUnica extends Pregunta {
                 pos = listaOpciones.indexOf(o);
             }
         }
-        String resultado = this.getId() + "," + this.listaOpciones.size() + "," + (pos +1) + "\n" + this.getEnunciado() + "\n";
+        String resultado = this.getId() + "," + this.listaOpciones.size() + "," + (pos + 1) + "\n" + this.getEnunciado()
+                + "\n";
         for (Opcion o : listaOpciones) {
             resultado += o.toString();
         }
@@ -79,14 +80,14 @@ public class RespuestaUnica extends Pregunta {
                 pos = listaOpciones.indexOf(o);
             }
         }
-        String resultado = "Pregunta tipo Unica, " + this.getEnunciado() + ", con " + this.listaOpciones.size() + " opciones, la " + (pos + 1) +
-                " es la verdadera\n";
-        for (Opcion o: listaOpciones) {
+        String resultado = "Pregunta tipo Unica, " + this.getEnunciado() + ", con " + this.listaOpciones.size()
+                + " opciones, la " + (pos + 1) + " es la verdadera\n";
+        for (Opcion o : listaOpciones) {
             resultado += "- " + o.toString();
         }
         if (this.listaOpciones.size() == 0) {
-            return "Pregunta tipo Unica, " + this.getEnunciado() + ", con " + this.listaOpciones.size() + " opciones," +
-                    " no tiene opcion verdadera\n" + listaOpciones;
+            return "Pregunta tipo Unica, " + this.getEnunciado() + ", con " + this.listaOpciones.size() + " opciones,"
+                    + " no tiene opcion verdadera\n" + listaOpciones;
         } else {
             return resultado;
         }

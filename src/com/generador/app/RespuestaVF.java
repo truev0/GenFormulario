@@ -3,7 +3,6 @@ package com.generador.app;
 public class RespuestaVF extends Pregunta {
     private char respuesta;
 
-
     public RespuestaVF(char id, String enunciado, char respuesta) {
         super(id, enunciado);
         this.respuesta = respuesta;
