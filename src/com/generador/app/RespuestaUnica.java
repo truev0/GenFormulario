@@ -3,15 +3,34 @@ package com.generador.app;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Se crea la clase RespuestaUnica, que atiende directamente a las preguntas de tipo respuesta unica, de seleccion multiple,
+ * hereda de la clase pregunta
+ */
 public class RespuestaUnica extends Pregunta {
     private final ArrayList<Opcion> listaOpciones;
+    /**
+     * Iterador de la lista de opciones de la pregunta
+     */
     Iterator<Opcion> iteradorOpciones;
 
+    /**
+     * Se instancia una nueva pregunta de tipo respuesta unica
+     *
+     * @param id        identificador de la pregunta
+     * @param enunciado texto de la pregimta
+     */
     public RespuestaUnica(char id, String enunciado) {
         super(id, enunciado);
         this.listaOpciones = new ArrayList<>();
     }
 
+    /**
+     * Metodo que permite la eliminacion de una opcion para una pregunta
+     *
+     * @param textoOpcion , texto opcion para buscar y comparar con las diferentes opciones existentes
+     * @return un boolean, dependiendo si se elimino correctamente true, de lo contrario false
+     */
     public boolean eliminarOpcion(String textoOpcion) {
         iteradorOpciones = this.listaOpciones.iterator();
         while (iteradorOpciones.hasNext()) {
@@ -24,10 +43,23 @@ public class RespuestaUnica extends Pregunta {
         return false;
     }
 
+    /**
+     * Metodo que agrega una opcion a la lista de opciones de la pregunta
+     *
+     * @param opcion , recibe una instancia de opcion previamente creada
+     * @return un boolean, dependiendo si se agrego correctamente true, de lo contrario false
+     */
     public boolean agregarOpcion(Opcion opcion) {
         return this.listaOpciones.add(opcion);
     }
 
+    /**
+     * Metodo que itera sobre la lista de opciones para devolver la opcion que comparada con el texto ingresado y la lista
+     * de opciones sea la misma.
+     *
+     * @param textoOpcion texto de la opcion a buscar dentro de la lista
+     * @return objeto opcion
+     */
     public Opcion buscarOpcion(String textoOpcion) {
         iteradorOpciones = this.listaOpciones.iterator();
         while (iteradorOpciones.hasNext()) {
@@ -39,10 +71,18 @@ public class RespuestaUnica extends Pregunta {
         return null;
     }
 
+    /**
+     * Metodo get que devuelve la lista de opciones de la pregunta actual
+     *
+     * @return lista opciones
+     */
     public ArrayList<Opcion> getListaOpciones() {
         return listaOpciones;
     }
 
+    /**
+     * Metodo que muestra la pregunta junto sus opciones de una forma mas legible por pantalla
+     */
     public void mostrarPregunta() {
         System.out.println(this.getEnunciado());
         int i = 0;

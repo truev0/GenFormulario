@@ -10,7 +10,7 @@ public class Formulario {
     private final ArrayList<Pregunta> listaPreguntas;
 
     /**
-     * Se instnacia un nuevo formulario.
+     * Se instancia un nuevo formulario.
      *
      * @param nombre , definido como el nombre del formulario
      */

@@ -5,11 +5,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Se crea la clase de implementacion del sistema de formulario, el cual contiene la lista de formularios.
+ */
 public class SistemaFormularioImpl implements SistemaFormulario {
     private final ArrayList<Formulario> listaFormularios;
     private Iterator<Formulario> iteradorFormularios;
     private Scanner scanner;
 
+    /**
+     * Se instancia un nuevo sistema de formularios
+     */
     public SistemaFormularioImpl() {
         this.listaFormularios = new ArrayList<>();
     }
@@ -242,6 +248,11 @@ public class SistemaFormularioImpl implements SistemaFormulario {
         }
     }
 
+    /**
+     * Gets lista formularios.
+     *
+     * @return the lista formularios
+     */
     public ArrayList<Formulario> getListaFormularios() {
         return listaFormularios;
     }
